@@ -5,7 +5,7 @@
 
 (ido-vertical-mode 1)
 
-;; Still an emacs noob;
+;; Still an Emacs noob;
 (setq guide-key/guide-key-sequence '("C-x" "C-c" "C-r" "C-t" "C-v"))
 (setq guide-key/text-scale-amount '-1)
 (setq guide-key/recursive-key-sequence-flag t)
