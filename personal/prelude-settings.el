@@ -1,4 +1,9 @@
-(prelude-require-packages '(ido-vertical-mode guide-key multiple-cursors
+(prelude-require-packages '(ido-vertical-mode guide-key
+                                              nyan-mode
+                                              smart-mode-line
+                                              key-chord
+                                              auctex
+                                              multiple-cursors
                                              restclient))
 
 ;; I like vertical-ido mode
@@ -12,12 +17,17 @@
 (setq guide-key/popup-window-position 'bottom)
 (guide-key-mode t)
 
+
 ;; expand region and multiple cursor work flow for fancy
 ;; editing.Thanks to Emacs Rocks.
 
 (global-set-key (kbd "C-`") 'er/expand-region)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c C->") 'mc/skip-to-next-like-this)
-
-
+(guide-key/key-chord-hack-on)
+(nyan-mode t)
 (scroll-bar-mode -1)
+
+
+(key-chord-define-global "jj" 'ace-jump-mode)
+(key-chord-mode t)
