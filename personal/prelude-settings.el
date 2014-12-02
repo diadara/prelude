@@ -1,10 +1,7 @@
 (prelude-require-packages '(ido-vertical-mode guide-key
                                               nyan-mode
-                                              smart-mode-line
-                                              key-chord
-                                              auctex
                                               multiple-cursors
-                                             restclient))
+                                              restclient))
 
 ;; I like vertical-ido mode
 
@@ -29,5 +26,7 @@
 (scroll-bar-mode -1)
 
 
-(key-chord-define-global "jj" 'ace-jump-mode)
-(key-chord-mode t)
+
+
+;;(key-chord-define-global "jj" 'ace-jump-mode)
+;;(key-chord-mode t)
