@@ -1,6 +1,7 @@
 (prelude-require-packages '(ido-vertical-mode guide-key
                                               nyan-mode
                                               multiple-cursors
+                                              wrap-region
                                               restclient))
 
 ;; I like vertical-ido mode
@@ -12,7 +13,7 @@
 (setq guide-key/text-scale-amount '-1)
 (setq guide-key/recursive-key-sequence-flag t)
 (setq guide-key/popup-window-position 'bottom)
-(guide-key-mode t)
+(guide-key-mode) t
 
 
 ;; expand region and multiple cursor work flow for fancy
