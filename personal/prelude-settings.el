@@ -2,10 +2,16 @@
                                               nyan-mode
                                               multiple-cursors
                                               wrap-region
+                                              color-theme-sanityinc-tomorrow
+                                              afternoon-theme
                                               restclient))
 
-;; I like vertical-ido mode
 
+;; Something different from the default boring theme
+(load-theme 'misterioso)
+
+
+;; I like vertical-ido mode
 (ido-vertical-mode 1)
 
 ;; Still an Emacs noob;
