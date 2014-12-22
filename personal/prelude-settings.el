@@ -1,5 +1,7 @@
+;;;Code
 (prelude-require-packages '(ido-vertical-mode guide-key
                                               nyan-mode
+                                              org-pomodoro
                                               multiple-cursors
                                               wrap-region
                                               color-theme-sanityinc-tomorrow
@@ -28,10 +30,13 @@
 (global-set-key (kbd "C-`") 'er/expand-region)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c C->") 'mc/skip-to-next-like-this)
+
+(key-chord-define-global "ww" 'ace-window)
+
 (guide-key/key-chord-hack-on)
 (nyan-mode t)
 (scroll-bar-mode -1)
-
+(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
 
 
