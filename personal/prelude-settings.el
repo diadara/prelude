@@ -3,7 +3,9 @@
                                               nyan-mode
                                               org-pomodoro
                                               multiple-cursors
+                                              jedi
                                               wrap-region
+                                              hy-mode
                                               color-theme-sanityinc-tomorrow
                                               afternoon-theme
                                               restclient))
@@ -38,7 +40,31 @@
 (scroll-bar-mode -1)
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
-
+(key-chord-define-global "ii" 'imenu)
 
 ;;(key-chord-define-global "jj" 'ace-jump-mode)
 ;;(key-chord-mode t)
+
+(setq jedi:setup-keys t)
+(setq jedi:complete-on-dot t)
+(add-hook 'prelude-python-mode-hook 'jedi:setup)
+
+
+(defun diadara/duplicate-line ()
+  "Duplicate current line."
+  (interactive)
+  (let* ((text (buffer-substring-no-properties (point-at-bol) (point-at-eol)))
+         (cur-col (length (buffer-substring-no-properties (point-at-bol) (point)))))
+    (end-of-line) (insert "\n" text)
+    (beginning-of-line) (right-char cur-col)))
+
+(defun diadara/kill-line ()
+  "kills the current line."
+  (interactive)
+  (beginning-of-line)
+  (kill-line)
+  (kill-line)
+  )
+k
+(key-chord-define-global "dd" 'diadara/duplicate-line)
+(key-chord-define-global "kk" 'diadara/kill-line)
