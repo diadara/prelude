@@ -1,29 +1,34 @@
 ;;;Code
 (prelude-require-packages '(ido-vertical-mode guide-key
                                               nyan-mode
+                                              xcscope
                                               org-pomodoro
                                               multiple-cursors
-                                              jedi
                                               wrap-region
                                               hy-mode
                                               color-theme-sanityinc-tomorrow
                                               afternoon-theme
+                                              paradox
+                                              async
                                               restclient))
 
 
 ;; Something different from the default boring theme
-(load-theme 'misterioso)
+;;(load-theme 'misterioso)
+(load-theme 'mustang)
 
 
+(cscope-setup)
 ;; I like vertical-ido mode
 (ido-vertical-mode 1)
 
+(wrap-region-global-mode t)
 ;; Still an Emacs noob;
 (setq guide-key/guide-key-sequence '("C-x" "C-c" "C-r" "C-t" "C-v"))
 (setq guide-key/text-scale-amount '-1)
 (setq guide-key/recursive-key-sequence-flag t)
 (setq guide-key/popup-window-position 'bottom)
-(guide-key-mode) t
+(guide-key-mode t)
 
 
 ;; expand region and multiple cursor work flow for fancy
@@ -42,13 +47,6 @@
 
 (key-chord-define-global "ii" 'imenu)
 
-;;(key-chord-define-global "jj" 'ace-jump-mode)
-;;(key-chord-mode t)
-
-(setq jedi:setup-keys t)
-(setq jedi:complete-on-dot t)
-(add-hook 'prelude-python-mode-hook 'jedi:setup)
-
 
 (defun diadara/duplicate-line ()
   "Duplicate current line."
@@ -65,6 +63,9 @@
   (kill-line)
   (kill-line)
   )
-k
+
 (key-chord-define-global "dd" 'diadara/duplicate-line)
 (key-chord-define-global "kk" 'diadara/kill-line)
+
+(setq anaconda-mode-python "/usr/bin/python2")
+;;(erc-autojoin-add   )
