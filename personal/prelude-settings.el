@@ -16,8 +16,6 @@
 ;; Something different from the default boring theme
 ;;(load-theme 'misterioso)
 (load-theme 'mustang)
-
-
 (cscope-setup)
 ;; I like vertical-ido mode
 (ido-vertical-mode 1)
@@ -29,7 +27,6 @@
 (setq guide-key/recursive-key-sequence-flag t)
 (setq guide-key/popup-window-position 'bottom)
 (guide-key-mode t)
-
 
 ;; expand region and multiple cursor work flow for fancy
 ;; editing.Thanks to Emacs Rocks.
@@ -46,7 +43,6 @@
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
 (key-chord-define-global "ii" 'imenu)
-
 
 (defun diadara/duplicate-line ()
   "Duplicate current line."
